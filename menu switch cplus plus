@@ -1,0 +1,97 @@
+#include <iostream>
+using namespace std;
+
+int taille =0;
+int[taille] matable;
+
+void lecture(int taille)
+{
+  for ( int i=0; i<taille;i++)
+  {
+    cout << "Entrer matable["<<i<<"] = ";
+    cin >> matable[i];
+    cout<<"\n";
+  }
+}
+
+void affichage(int matable[taille])
+{
+  for ( int i=0; i<taille;i++)
+  {
+    cout << "matable["<<i<<"] = "<<matable[i]<<"\n";
+  }
+}
+
+int min(int matable[taille])
+{
+  int min_tab = matable
+  for ( int i=0; i<taille;i++)
+  {
+    if ( matable[i]< min_tab) min_tab = matable[i];
+  }
+  return min_tab;
+}
+
+int max(int matable[taille])
+{
+  int max_tab = matable
+  for ( int i=0; i<taille;i++)
+  {
+    if ( matable[i]< max_tab) max_tab = matable[i];
+  }
+  return max_tab;
+}
+
+int main()
+{
+    int selection;
+
+    do
+    {
+        cout << "  menu de ma table\n";
+        cout << "  ====================================\n";
+        cout << "  1.  Lecture de table\n";
+        cout << "  2.  Affichage de tableau\n";
+        cout << "  3.  min de ma table \n";
+        cout << "  4.  max de ma table \n";
+        cout << "\n";
+        cout << "  5.  Exit\n";
+        cout << "  ====================================\n";
+        cout << "  Enter your selection: ";
+        cin >> selection;
+        cout << endl;
+
+        switch (selection)
+        {
+            case 1:
+                cout << "Computer Programming In C++\n";
+                cout << "\n";
+                break;
+
+            case 2:
+                cout << "Java Programming\n";
+                cout << "\n";
+                break;
+            case 3:
+                cout << "Android Programming\n" ;
+                cout << "\n";
+                break;
+
+            case 4:
+                cout << "iOS Programming\n";
+                cout << "\n";
+                break;
+
+            case 5:
+                cout << "Goodbye.\n";
+                break;
+
+            default: cout <<selection << "is not a valid menu item.\n";
+
+                cout << endl;
+        }
+
+    }while (selection != 5 );
+
+    return 0;
+}
