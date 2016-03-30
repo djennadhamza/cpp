@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
 
-int taille =0;
-int[taille] matable;
+int taille =10;
+int matable[10]= {8,1,0,9,6,4,2,7,5,3};
 
-void lecture(int taille)
+void lecture()
 {
   for ( int i=0; i<taille;i++)
   {
@@ -14,7 +14,7 @@ void lecture(int taille)
   }
 }
 
-void affichage(int matable[taille])
+void affichage()
 {
   for ( int i=0; i<taille;i++)
   {
@@ -22,24 +22,67 @@ void affichage(int matable[taille])
   }
 }
 
-int min(int matable[taille])
+int min()
 {
-  int min_tab = matable
-  for ( int i=0; i<taille;i++)
+  int min_tab = matable[0];
+  for ( int i=1; i<taille;i++)
   {
     if ( matable[i]< min_tab) min_tab = matable[i];
   }
   return min_tab;
 }
 
-int max(int matable[taille])
+int max()
 {
-  int max_tab = matable
-  for ( int i=0; i<taille;i++)
+  int max_tab = matable[0];
+  for ( int i=1; i<taille;i++)
   {
-    if ( matable[i]< max_tab) max_tab = matable[i];
+    if ( matable[i]>max_tab) max_tab = matable[i];
   }
   return max_tab;
+}
+
+int moy()
+{
+  int total = matable[0];
+  for ( int i=1; i<taille;i++)
+  {
+    total=total+matable[i];
+  }
+  int moy = total/taille;
+  return moy;
+}
+
+int nb_sup_moy()
+{
+ int nbsupmoy=0;
+  for ( int i=0; i<taille;i++)
+  {
+    if ( matable[i]>moy()) nbsupmoy=nbsupmoy+1;
+  }
+  return nbsupmoy;
+}
+
+int nb_pair()
+{
+ int nbpair = 0;
+  for ( int i=0; i<taille;i++)
+  {
+    if (matable[i]%2 == 0) nbpair=nbpair+1;
+  }
+  return nbpair;
+}
+
+
+int moy_nb_impair()
+{
+ int total=0,moynbimpair =0;
+  for ( int i=0; i<taille;i++)
+  {
+    if ( matable[i]%2 != 0) total=total+matable[i];
+  }
+  moynbimpair= total/taille;
+  return moynbimpair;
 }
 
 int main()
@@ -54,8 +97,11 @@ int main()
         cout << "  2.  Affichage de tableau\n";
         cout << "  3.  min de ma table \n";
         cout << "  4.  max de ma table \n";
+        cout << "  5.  nombre des valeur > moy\n";
+        cout << "  6.  nombre des valeur pair \n";
+        cout << "  7.  moy des valeur impair \n";
         cout << "\n";
-        cout << "  5.  Exit\n";
+        cout << "  5.  Quiter\n";
         cout << "  ====================================\n";
         cout << "  Enter your selection: ";
         cin >> selection;
@@ -64,34 +110,48 @@ int main()
         switch (selection)
         {
             case 1:
-                cout << "Computer Programming In C++\n";
-                cout << "\n";
+                cout << "lecture de tableau\n";
+                lecture();
                 break;
 
             case 2:
-                cout << "Java Programming\n";
-                cout << "\n";
+                cout << "Affichage de tableau\n";
+                affichage();
                 break;
             case 3:
-                cout << "Android Programming\n" ;
-                cout << "\n";
+                cout << "min de tableau est :"<<min()<<"\n" ;
                 break;
 
             case 4:
-                cout << "iOS Programming\n";
+                cout << "max de tableau est :"<<max()<<"\n";
                 cout << "\n";
                 break;
 
             case 5:
-                cout << "Goodbye.\n";
+                cout << "nb sup moy est: "<<nb_sup_moy()<<"\n";
+                cout << "\n";
                 break;
 
-            default: cout <<selection << "is not a valid menu item.\n";
+            case 6:
+                cout << "nb des valeur pair est : "<<nb_pair()<<"\n";
+                cout << "\n";
+                break;
+
+            case 7:
+                cout << "moy des val impair est : "<<moy_nb_impair()<<"\n";
+                cout << "\n";
+                break;
+
+            case 8:
+                cout << "fin de programer bye bye.\n";
+                break;
+
+            default: cout <<selection << " invalid selection, svp selection a nouvou .\n";
 
                 cout << endl;
         }
 
-    }while (selection != 5 );
+    }while (selection != 8 );
 
     return 0;
 }
