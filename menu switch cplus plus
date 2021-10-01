@@ -146,7 +146,7 @@ int main()
                 cout << "fin de programer bye bye.\n";
                 break;
 
-            default: cout <<selection << " invalid selection, svp selection a nouvou .\n";
+            default: cout <<selection << " invalid selection, svp selection a nouveau .\n";
 
                 cout << endl;
         }
