@@ -101,7 +101,7 @@ int main()
         cout << "  6.  nombre des valeur pair \n";
         cout << "  7.  moy des valeur impair \n";
         cout << "\n";
-        cout << "  5.  Quiter\n";
+        cout << "  8.  Quiter\n";
         cout << "  ====================================\n";
         cout << "  Enter your selection: ";
         cin >> selection;
