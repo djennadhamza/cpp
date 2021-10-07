@@ -1,2 +1,4 @@
-# c-
-some c++ codes
+# c++
+Some c++ codes
+
+This repository is deprecated
